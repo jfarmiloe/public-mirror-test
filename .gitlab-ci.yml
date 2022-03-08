@@ -9,6 +9,7 @@ build0:
   script:
     - echo "Build0"
     - echo $CI_PIPELINE_SOURCE
+    - echo $CI_COMMIT_BRANCH
     
 build1:
   stage: build
