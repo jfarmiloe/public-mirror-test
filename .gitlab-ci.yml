@@ -13,7 +13,7 @@ build0:
 build1:
   stage: build
   rules:
-  - if: '$CI_PIPELINE_SOURCE != "trigger"'
+  - if: $CI_PIPELINE_SOURCE != "trigger" && $CI_COMMIT_BRANCH == "main"
     changes:
       - tools/gitlab/Dockerfile
       - .gitlab-ci.yml
