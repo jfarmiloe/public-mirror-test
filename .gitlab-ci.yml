@@ -15,7 +15,7 @@ build1:
   rules:
   - if: '$CI_PIPELINE_SOURCE != "trigger"'
     changes:
-      - Dockerfile
+      - tools/gitlab/Dockerfile
       - .gitlab-ci.yml
   script:
     - echo "Build1"
