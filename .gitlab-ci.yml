@@ -4,15 +4,12 @@ variables:
   DUMMY: 1
   #CI_DEBUG_TRACE: 1
 
-before_script:
-  - echo "Before script section"
-  - echo "For example you might run an update here or install a build dependency"
-  - echo "Or perhaps you might print out some debugging details"
-
-after_script:
-  - echo "After script section"
-  - echo "For example you might do some cleanup here"
-
+build0:
+  stage: build
+  script:
+    - echo "Build0"
+    - echo $CI_PIPELINE_SOURCE
+    
 build1:
   stage: build
   rules:
@@ -21,4 +18,5 @@ build1:
       - Dockerfile
       - .gitlab-ci.yml
   script:
-    - echo "Do your build here"
+    - echo "Build1"
+    - echo $CI_PIPELINE_SOURCE
